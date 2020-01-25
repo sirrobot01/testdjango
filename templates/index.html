@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Django</title>
+</head>
+<body>
+
+<table>
+    <thead>
+    <tr>
+        <th>Names</th>
+        <th>Author</th>
+        <th>Year</th>
+        <th> Number of Pages</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for book in books %}
+        <tr>
+        <td>{{ book.name }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.year }}</td>
+        <td>{{ book.pages }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<a href="{% url 'add_book' %}">Add Book</a>
+</body>
+
+<style>
+    table, th, td {
+  border: 1px solid black;
+}
+</style>
+</html>
